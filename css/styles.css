@@ -39,7 +39,6 @@ footer .wrapper-inner {
     align-items: center;
 }
 
-.services-item div,    /* убрать если нужно сделать через ссылки  */
 .services-item a,
 .about-company-item div,
 .transport-item a {
