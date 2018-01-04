@@ -16,12 +16,20 @@ $(window).ready(function () {
 
     /*----------- SCROLL OF THE ANCHOR ----------------*/
 
-    $("#menu").on("click", "a", function (event) {
+    /*$("#menu").on("click", "a", function (event) {
         event.preventDefault();
         var id = $(this).attr('href'),
             top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 1500);
+    });*/
+
+    $('a[href^="#"]').click(function () {
+        var target = $(this).attr('href');
+        $('body, html').animate({scrollTop: $(target).offset().top}, 1000);
+
+        return false;
     });
+
 
     /*------------------- SCROLL UP ------------------*/
 
@@ -86,7 +94,56 @@ $(window).ready(function () {
         $('.page-language-icon').attr('class', 'page-language-icon page-language-icon-' + li.attr('class'));
 
         li.parent().fadeOut(400);
-    })
+    });
+
+    /*----------------- MODAL ----------------*/
+
+    $('.get-modal').click(function () {
+        $('.modal').fadeIn(400).css('display', 'flex');
+    });
+
+    $('.modal').click(function (event) {
+        var clickedElement = event.target;
+        if(!$(clickedElement).closest('.modal-inner').length) {
+            $('.modal').fadeOut(400);
+        }
+        if($(clickedElement).hasClass('close-modal')) {
+            $('.modal').fadeOut(400);
+        }
+    });
+
+    /*--------- Modal Custom Select ------------*/
+
+    $('.select-button').click(function () {
+        $(this).closest('.select').siblings().find('.select-button').removeClass('up');
+        $(this).closest('.select').siblings().children('ul').fadeOut(400);
+        $(this).parent().siblings('.select ul').fadeToggle(400);
+        $(this).toggleClass('up');
+    });
+
+    $('.modal-inner').click(function (event) {
+        var clickedElement = event.target;
+
+        if (!$(clickedElement).closest('.select').length) {
+            $('.select ul').fadeOut(400);
+            $('.select-button').removeClass('up');
+        }
+    });
+
+    $('.select ul li').click(function () {
+        var li = $(this);
+        var value = li.text();
+        li.parent().siblings('.select-value').children('.select-value-name').text(value);
+        li.siblings().removeClass('active');
+        li.addClass('active');
+        $('.select-button').removeClass('up');
+
+        li.parent().siblings('input').val(value);
+
+        li.parent().fadeOut(400);
+    });
+
+
 
 });
 

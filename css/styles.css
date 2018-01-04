@@ -131,7 +131,7 @@ header a:hover {
     transform: translateX(-5px) scale(1.15);
 }
 
-/*-------------CUSTOM-DROPDOWN---------------------------*/
+/*------Custom-Dropdown---------*/
 
 .custom-dropdown {
     position: relative;
@@ -186,7 +186,7 @@ header a:hover {
     color: red;
 }
 
-/*-------------CUSTOM-SELECT---------------------------*/
+/*----- Custom-Select ----------*/
 
 .custom-select {
     position: relative;
@@ -434,7 +434,9 @@ button:focus,
 }
 
 .transport-item {
-    justify-content: space-around;
+    width: 100%;
+    max-width: 870px;
+    margin: 0 auto;
 }
 
 .transport-item-logo {
@@ -470,6 +472,25 @@ button:focus,
 
 .transport-item-logo:hover {
     transform: scale(1.1);
+}
+
+.transport-item-logo:after {
+    background: #0096dc;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+}
+
+.transport-item-logo:before {
+    width: 0;
+    height: 0;
+    background: none;
+    border: 10px solid transparent;
+    border-top: 10px solid #0096dc;
+}
+
+[data-balloon][data-balloon-pos="up"]:before {
+    margin-bottom: -7px;
 }
 
 /*-------------------- ADVANTAGES ------------------------*/
@@ -554,11 +575,15 @@ button:focus,
 }
 
 .info .order-services:active {
-    box-shadow: 9px 9px 15px 0 rgba(0, 0, 0, .5);
+    background: #0081dc;
     transform: translateY(2px);
 }
 
-/**---------------- FOOTER ----------------------*/
+.info .order-services:hover {
+    box-shadow: 9px 9px 15px 0 rgba(0, 0, 0, .5);
+}
+
+/*---------------- FOOTER ----------------------*/
 
 footer[role='contentinfo'] {
     padding: 35px 0;
@@ -572,6 +597,9 @@ footer[role='contentinfo'] {
 }
 
 footer .arrow-up {
+    position: fixed;
+    bottom: 20px;
+    right: 60px;
     background: url(../source/images/arrow-up.png);
     width: 58px;
     height: 57px;
@@ -584,3 +612,159 @@ footer .arrow-up:hover {
     background: url(../source/images/arrow-up-hover.png);
     transform: scale(1.2);
 }
+
+/*-------------------- MODAL -------------------------*/
+
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .7);
+    overflow: auto; /*создает скроллы внутри модального окна, а не обрезает полностью*/
+    z-index: 101;
+}
+
+.modal-inner {
+    position: relative;
+    justify-content: space-between;
+    width: 700px;
+    background: white;
+    border-radius: 7px;
+    padding: 60px 40px 35px;
+}
+
+.close-modal {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: url('../source/images/close-modal.png') no-repeat center;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    transform: scale(1.2);
+}
+
+ /*-------Form-------*/
+
+.modal-form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.modal-form input {
+    display: block;
+    margin: 0 0 20px 0;
+    border: none;
+}
+
+.modal-form input[name='select'] {
+    display: none;
+}
+
+.modal-form .name,
+.modal-form .email,
+.modal-form .select {
+    width: 280px;
+    height: 45px;
+    padding: 15px 20px;
+    border: 1px solid #c1c6c9;
+    border-radius: 3px;
+}
+
+.select {
+    position: relative;
+}
+
+.select ul {
+    display: none;
+    position: absolute;
+    top: calc(100%);
+    left: 0;
+    width: calc(100% - 45px);
+    max-height: 115px;
+    overflow: auto;
+    background: white;
+    border: 1px solid #c1c6c9;
+}
+
+.select ul li {
+    padding: 10px 0 10px 20px;
+    color: #4477c3;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.select ul li:hover {
+    background: #c1c6c9;
+    color: white;
+}
+
+.select ul li.active {
+    color: #8aa646;
+}
+
+.select-value-name {
+    color:#585858;
+    font-size: 14px;
+}
+
+.select-button {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    width: 46px;
+    height: 44px;
+    border-left: 1px solid #c1c6c9;
+    background: url(../source/images/button-modal-select.png) no-repeat center;
+    cursor: pointer;
+}
+
+.select-button.up {
+    background: url(../source/images/button-modal-select-up.png) no-repeat center;
+}
+
+.modal-form .submit {
+    display: block;
+    margin: 30px auto 0 auto;
+    background: url(../source/images/button-modal.png) no-repeat center;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+
+::-webkit-input-placeholder {color:#585858;}
+::-moz-placeholder          {color:#585858;}
+:-moz-placeholder           {color:#585858;}
+:-ms-input-placeholder      {color:#585858;}
+
+::-webkit-input-placeholder {font-family: 'Arial Regular', sans-serif;}
+::-moz-placeholder          {font-family: 'Arial Regular', sans-serif;}
+:-moz-placeholder           {font-family: 'Arial Regular', sans-serif;}
+:-ms-input-placeholder      {font-family: 'Arial Regular', sans-serif;}
+
+::-webkit-input-placeholder {font-size: 14px;}
+::-moz-placeholder          {font-size: 14px;}
+:-moz-placeholder           {font-size: 14px;}
+:-ms-input-placeholder      {font-size: 14px;}
+
+:focus::-webkit-input-placeholder {color: transparent}
+:focus::-moz-placeholder          {color: transparent}
+:focus:-moz-placeholder           {color: transparent}
+:focus:-ms-input-placeholder      {color: transparent}

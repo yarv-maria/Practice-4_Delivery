@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Lesson 14</title>
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/balloon.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -17,7 +18,7 @@
 
                 <nav id="menu">
                     <ul>
-                        <li> <a href="#about-company"> О компании </a> </li>
+                        <li> <a href="#counts"> О компании </a> </li>
                         <li> <a href="#services"> Услуги </a> </li>
                         <li> <a href="#"> Новости </a> </li>
                         <li> <a href="#"> Контакты </a> </li>
@@ -82,11 +83,11 @@
 
         </div>
 
-        <div class="services">
+        <div class="services" id="services">
             <div class="wrapper-inner">
 
                 <h2>
-                    <a id="services"> Наши услуги </a>
+                    <a> Наши услуги </a>
                 </h2>
 
                 <div class="services-item">
@@ -173,17 +174,17 @@
                 <div class="transport-item">
 
                     <a href="#">
-                        <span class="transport-item-logo avia"></span>
+                        <span class="transport-item-logo avia" data-balloon="Авиаперевозки" data-balloon-pos="up" data-balloon-length="fit"></span>
                         <span class="transport-item-name"> Авиаперевозки </span>
                     </a>
 
                     <a href="#">
-                        <span class="transport-item-logo water"></span>
+                        <span class="transport-item-logo water" data-balloon="Водный транспорт" data-balloon-pos="up" data-balloon-length="fit"></span>
                         <span class="transport-item-name"> Водный транспорт </span>
                     </a>
 
                     <a href="#">
-                        <span class="transport-item-logo avto"></span>
+                        <span class="transport-item-logo avto" data-balloon="Автоперевозки" data-balloon-pos="up" data-balloon-length="fit"></span>
                         <span class="transport-item-name"> Автоперевозки </span>
                     </a>
 
@@ -235,7 +236,7 @@
                     - Международный аэропорт «Стригино» (Нижний Новгород), Домодедово (DME), Шереметьево (SVO),
                     Внуково (VKO), в любой другой аэропорт РФ (России) на условиях Ex-works </p>
 
-                <button class="order-services"> Заказать услуги </button>
+                <button class="order-services get-modal"> Заказать услуги </button>
 
             </div>
         </div>
@@ -257,11 +258,58 @@
         </footer>
 
     </div>
+
+    <div class="modal">
+
+        <div class="modal-inner">
+
+            <div class="close-modal"></div>
+
+            <form action="" method="get" class="modal-form">
+
+                <input type="text" placeholder="Введите ваше имя" class="name" required>
+
+                <input type="email" placeholder="Введите ваш e-mail" class="email" required>
+
+                <div class="select">
+                    <div class="select-value">
+                        <span class="select-value-name"> Выберите страну </span>
+                        <span class="select-button select-button-country"> </span>
+                    </div>
+                    <ul>
+                        <li> Ukraine </li>
+                        <li> Russia </li>
+                        <li> USA </li>
+                    </ul>
+                    <input type="text" name="select">
+                </div>
+
+                <div class="select">
+                    <div class="select-value">
+                        <span class="select-value-name"> Выберите страну </span>
+                        <span class="select-button select-button-city"> </span>
+                    </div>
+                    <ul>
+                        <li> Kharkov </li>
+                        <li> Kiev </li>
+                        <li> Moscow </li>
+                        <li> New-York </li>
+                    </ul>
+                    <input type="text" name="select">
+                </div>
+
+                <button class="submit" > Отправить </button>
+
+            </form>
+
+        </div>
+
+    </div>
     
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/slick.min.js"></script>
-    <script src="js/scripts.js"></script>
     <script src="js/jquery.spincrement.min.js"></script>
+    <script src="js/scripts.js"></script>
 
 </body>
 
