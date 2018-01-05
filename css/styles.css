@@ -674,23 +674,31 @@ footer .arrow-up:hover {
 .modal-form .name,
 .modal-form .email,
 .modal-form .select {
-    width: 280px;
+    width: 47.5%;
     height: 45px;
-    padding: 15px 20px;
+    padding: 15px 46px 15px 20px;
     border: 1px solid #c1c6c9;
     border-radius: 3px;
 }
 
-.select {
+.modal-form .select {
     position: relative;
+}
+
+.modal-form .select-value-name {
+    display: block;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .select ul {
     display: none;
     position: absolute;
     top: calc(100%);
-    left: 0;
-    width: calc(100% - 45px);
+    left: -1px;
+    width: calc(100% - 44px);
     max-height: 115px;
     overflow: auto;
     background: white;
@@ -702,6 +710,9 @@ footer .arrow-up:hover {
     color: #4477c3;
     font-size: 14px;
     cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .select ul li:hover {
