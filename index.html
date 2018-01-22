@@ -3,9 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Lesson 14</title>
+
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/balloon.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -17,7 +21,8 @@
             <div class="wrapper-inner">
 
                 <nav id="menu">
-                    <ul>
+                    <i class="fa fa-bars burger"></i>
+                    <ul class="left-menu">
                         <li> <a href="#counts"> О компании </a> </li>
                         <li> <a href="#services"> Услуги </a> </li>
                         <li> <a href="#"> Новости </a> </li>
@@ -29,7 +34,7 @@
                 <div class="menu-right">
 
                     <div class="custom-dropdown">
-                        <button> Нажми меня </button>
+                        <button> Нажми </button>
                         <ul>
                             <li> <a href=""> Еще какое-то значение 1 </a> </li>
                             <li> <a href=""> Еще какое-то значение 2 </a> </li>
@@ -48,7 +53,10 @@
                             <li class="ru"> Русская версия  </li>
                             <li class="ua"> Українська версія  </li>
                         </ul>
-                        <input type="text" name="page-language" value="en">
+                        <label>
+                            <input type="text" name="page-language" value="en">
+                        </label>
+
                     </div>
                 </div>
 
@@ -281,12 +289,15 @@
                         <li> Russia </li>
                         <li> USA </li>
                     </ul>
-                    <input type="text" name="select">
+                    <label>
+                        <input type="text" name="select">
+                    </label>
+
                 </div>
 
                 <div class="select">
                     <div class="select-value">
-                        <span class="select-value-name"> Выберите страну </span>
+                        <span class="select-value-name"> Выберите город </span>
                         <span class="select-button select-button-city"> </span>
                     </div>
                     <ul>
@@ -295,7 +306,10 @@
                         <li> Moscow </li>
                         <li> New-York </li>
                     </ul>
-                    <input type="text" name="select">
+                    <label>
+                        <input type="text" name="select">
+                    </label>
+
                 </div>
 
                 <button class="submit" > Отправить </button>

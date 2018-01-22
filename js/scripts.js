@@ -16,20 +16,12 @@ $(window).ready(function () {
 
     /*----------- SCROLL OF THE ANCHOR ----------------*/
 
-    /*$("#menu").on("click", "a", function (event) {
-        event.preventDefault();
-        var id = $(this).attr('href'),
-            top = $(id).offset().top;
-        $('body,html').animate({scrollTop: top}, 1500);
-    });*/
-
     $('a[href^="#"]').click(function () {
         var target = $(this).attr('href');
-        $('body, html').animate({scrollTop: $(target).offset().top}, 1000);
+        $('body, html').animate({scrollTop: $(target).offset().top - $('header').height()}, 1000);
 
         return false;
     });
-
 
     /*------------------- SCROLL UP ------------------*/
 
@@ -142,7 +134,11 @@ $(window).ready(function () {
 
         li.parent().fadeOut(400);
     });
-
+    
+    $('.burger').click(function () {
+        $(this).toggleClass('fa-close fa-bars');
+        $('.left-menu').toggleClass('active')
+    });
 
 
 });
